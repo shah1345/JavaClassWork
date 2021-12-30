@@ -1,0 +1,3 @@
+Min cgpa of the last 5 students: omin, 900, 1.0
+Max cgpa of the last 5 students: ono, 548, 4.1
+Avg cgpa of the last 5 students: 3.72

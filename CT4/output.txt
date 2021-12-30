@@ -1,0 +1,3 @@
+Min cgpa of the first 5 students: Raihan, 223, 1.57
+Max cgpa of the first 5 students: Esha, 545, 4.0
+Avg cgpa of the last 5 students: 2.34
