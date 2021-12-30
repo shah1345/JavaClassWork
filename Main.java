@@ -1,76 +1,110 @@
-import java.util.Scanner;
+class Vehicle {
 
 
-class Course{
-    private String courseName;
-    private double gpa;
-    private double credit;
-    public Course(String CourseName,double Gpa,double Credit){
-        //Complete the constructor
-        courseName=CourseName;
-        gpa=Gpa;
-        credit=Credit;
+
+    String grade;
+    Double roadTax;
+    Double totaltax;
+
+
+    Vehicle(String grade, double roadTax){
+
+
+        this.grade=grade;
+        this.roadTax=roadTax;
 
 
     }
+
+    public Vehicle() {
+        this("",0);
+    }
+
+
+    Double totalTax(){
+        return roadTax;
+    }
+
+    String Grade(){
+        return grade;
+    }
+
 
 }
 
 
 
+class Public_vehicle extends Vehicle{
+
+    Double fitnessTax;
+
+    Public_vehicle(String grade, double roadTax, double fitnessTax){
+        this.grade=grade;
+        this.roadTax=roadTax;
+        this.fitnessTax=fitnessTax;
 
 
-class Student {
-
-
-     Course[] courses; //Array of course objects
-    String name;
-    int totalCourse;
-
-
-
-
-
-
-    String stu_id;
-    int score;
-    public Student() {
-        this(" ", " ", 0);
     }
-    public Student(String initName, String initId, int initScore) {
-        name = initName;
-        stu_id = initId;
-        score = initScore;
+
+
+
+    Double totalTax(){
+
+        return totaltax=2*(fitnessTax+roadTax);
+
     }
+
+
+
 }
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Input number of students:");
-        int n = Integer.parseInt(in.nextLine().trim());
-        System.out.println("Input Student Name, ID, Score:");
-        Student stu = new Student();
-        Student max = new Student();
-        Student min = new Student(" ", " ", 100);
-        for (int i = 0; i < n; i ++) {
-            stu.name = in.next();
-            stu.stu_id = in.next();
-            stu.score = in.nextInt();
-            if (max.score < stu.score) {
-                max.name = stu.name;
-                max.stu_id = stu.stu_id;
-                max.score = stu.score;
-            }
-            if (min.score > stu.score) {
-                min.name = stu.name;
-                min.stu_id = stu.stu_id;
-                min.score = stu.score;
-            }
+
+class Private_vehicle extends Vehicle{
+
+    Double fitnessTax;
+
+    Private_vehicle(String grade, double roadTax, double fitnessTax){
+        this.grade=grade;
+        this.roadTax=roadTax;
+        this.fitnessTax=fitnessTax;
+
         }
-        System.out.println("name, ID of the highest score and the lowest score:");
-        System.out.println(max.name + " " + max.stu_id);
-        System.out.println(min.name + " " + min.stu_id);
-        in.close();
+    Double totalTax(){
+        return  2.5*(fitnessTax+roadTax);
+    }
+
+
+
+}
+
+
+public class Main
+{
+    public static void main(String[] args) {
+
+
+        Vehicle[] Veh = new Vehicle[5];
+
+        Private_vehicle Vh1 = new Private_vehicle("shah",1000,200);
+        Private_vehicle Vh2 = new Private_vehicle("sabrina",20,5000);
+        Private_vehicle Vh3 = new Private_vehicle("esha",120,600);
+        Public_vehicle Vh4 = new  Public_vehicle("corola",560,4800);
+        Public_vehicle Vh5 = new  Public_vehicle("BMW",40,50);
+
+        Veh[0]= Vh1;
+        Veh[1]= Vh2;
+        Veh[2]= Vh3;
+        Veh[3]= Vh4;
+        Veh[4]= Vh5;
+
+
+
+        for(int i=0 ; i<5 ; i++){
+
+            System.out.println(Veh[i].Grade() + "  " + Veh[i].totalTax());
+
+        }
+
+
     }
 }

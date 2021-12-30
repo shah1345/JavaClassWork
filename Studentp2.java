@@ -2,7 +2,9 @@ import java.io.*;
 import java.util.Scanner;
 
 
-class Employe {
+
+class Student
+{
 
 
     public int ID;
@@ -10,17 +12,18 @@ class Employe {
     public double salary;
 
 
-    public Employe(int a, String b, double c) {
-        this.ID = a;
-        this.name = b;
-        this.salary = c;
+    public Student(int a, String b, double c) {
+        this.ID=a;
+        this.name=b;
+        this.salary= c;
 
     }
 
 
+
 }
 
-public class Employee {
+public class Studentp2 {
     public static void main(String[] args) throws IOException {
 
 
@@ -30,7 +33,7 @@ public class Employee {
         double salary;
 
 
-        Employe[] employe = new Employe[5];
+        Student[] student = new Student[0];
 
         try {
             File Object = new File("C:\\Users\\shahr\\IdeaProjects\\Dina\\employeeDirectory");
@@ -40,7 +43,7 @@ public class Employee {
                 // nStudent = Reader.nextInt();
                 String data = Reader.nextLine();
             }
-            employe = new Employe[5];
+            student = new Student[5];
             // student = new Student[5];
 
             for (int i = 0; Reader.hasNextLine(); i++) {
@@ -56,7 +59,7 @@ public class Employee {
                 salary = Double.parseDouble(in[2]);
 
 
-                employe[i] = new Employe(ID, name, salary);
+                student[i] = new Student(ID, name, salary);
                 //student[i] =  new Student(id, name, physicsMarks, chemistryMarks, mathMarks);
             }
             Reader.close();
@@ -77,12 +80,15 @@ public class Employee {
         for (int i = 0; i < 4; i++) {
 
 
-            if (maxSalary < employe[i].salary) {
-                maxSalary = employe[i].salary;
-                newid = employe[i].ID;
-                newname = employe[i].name;
+
+           if(maxSalary<student[i].salary){
+                maxSalary=student[i].salary;
+                newid=student[i].ID;
+                newname=student[i].name;
 
             }
+
+
 
 
         }

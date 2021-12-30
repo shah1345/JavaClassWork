@@ -1,25 +1,38 @@
+/*
+Write a class named Box which has 3 instance variables[ width(double) , height(double) and
+        depth(double)] ,one instance method[double volume()] and one constructor. Create two classes
+        named Cube and DifferentShapedBox by inheriting the Box class. Is it possible to write the above
+        program using “Abstract classes” ? If possible then:
+        i) Complete the program using abstract class
+ii) What is the advantage of using abstract class in question no – i
+
+*/
+
+
 public class Box {
-    double h,w,d;
 
-    Box(double width,double height,double depth)
-    {
-        h=height;
-        w=width;
-        d=depth;
-    }
-    double volume()
-    { double v;
-        v=h*w*d;
-        return v;
+    double width;
+    double height;
+    double depth;
+
+
+    double volume(){
+
+        return 0;
     }
 
-    public static void main(String[] args) {
+}
 
-        Box bc = new Box(5.8,50.3,6.6);
-        Box bX = new Box(5.5,60.3,9.8);
-        System.out.println(bc.volume());
-        System.out.println(bX.volume());
 
-    }
+class Cube extends Box {
+
+
+
+}
+
+
+class DifferentShapedBox extends Box {
+
+
 
 }
